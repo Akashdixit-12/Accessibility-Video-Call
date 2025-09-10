@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  overflow: hidden; /* Hide scrollbars if videos overflow */
+}
+
+#videoCallContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333; /* Dark background for video call */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  z-index: 999; /* Ensure it's above most page content */
+}
+
+#localVideo,
+#remoteVideo {
+  width: 45%; /* Adjust width for a responsive layout */
+  max-width: 600px;
+  height: auto; /* Maintain aspect ratio */
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+#captionDisplay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1.3em;
+  max-width: 70%;
+  text-align: center;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+#signLanguageDisplay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 200px; /* Increased size for better visibility */
+  height: 200px;
+  border: 3px solid #007bff; /* More prominent border color */
+  background-color: rgba(255,255,255,0.9);
+  display: flex;
+  flex-direction: column; /* Stack images vertically */
+  align-items: center;
+  justify-content: flex-start; /* Align items to the top */
+  overflow-y: auto; /* Allow scrolling if many signs */
+  z-index: 1001;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 5px;
+}
+
+#signLanguageDisplay img {
+  max-width: 90%; /* Slightly smaller to give padding */
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 5px; /* Spacing between signs */
+  border-radius: 4px;
+  background-color: #f0f0f0; /* Light background for individual signs */
+  padding: 3px;
+}
